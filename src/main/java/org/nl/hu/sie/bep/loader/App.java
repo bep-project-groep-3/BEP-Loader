@@ -1,7 +1,7 @@
-package org.nl.hu.sie.bep.business;
+package org.nl.hu.sie.bep.loader;
 
-import org.nl.hu.sie.bep.business.models.Data;
-import org.nl.hu.sie.bep.business.models.KlantMysqlImpl;
+import org.nl.hu.sie.bep.loader.models.Data;
+import org.nl.hu.sie.bep.loader.models.DatabaseInformationRetriever;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -19,8 +19,8 @@ public class App {
     }
 
     private static void connect() throws ClassNotFoundException, SQLException {
-        KlantMysqlImpl data = new KlantMysqlImpl();
-        List<Data> entries = data.get(5);
+        DatabaseInformationRetriever data = new DatabaseInformationRetriever();
+        List<Data> entries = data.getCustomerInformation(5);
 
         entries.forEach(System.out::println);
     }

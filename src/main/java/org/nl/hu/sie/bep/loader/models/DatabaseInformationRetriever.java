@@ -1,4 +1,4 @@
-package org.nl.hu.sie.bep.business.models;
+package org.nl.hu.sie.bep.loader.models;
 
 import com.mongodb.client.*;
 import com.mongodb.client.model.Aggregates;
@@ -13,48 +13,41 @@ import java.util.function.Consumer;
 
 import static com.mongodb.client.model.Filters.eq;
 
-public class KlantMysqlImpl {
-    private volatile Connection con = null;
+public class DatabaseInformationRetriever {
+    private Connection con = null;
     private PreparedStatement statement;
     private ResultSet result;
 
-    /**
-     * Return entries matching {@code month} from mysql
-     *
-     * @param month int
-     * @return matching entries if any
-     */
-    public List<Data> get(int month) throws SQLException {
-        AggregateIterable<Document> entries = this.getMongoData(month);
+    public List<Data> getCustomerInformation(int month) throws SQLException {
+        AggregateIterable<Document> entries = this.getInvoiceData(month);
 
         List<Data> data = new ArrayList<>();
-        entries.forEach((Consumer<? super Document>) (e) -> {
+        entries.forEach((Consumer<? super Document>) (invoice) -> {
             try {
                 PreparedStatement statement = prepare("SELECT * FROM Klant " +
                         " JOIN Adres A on Klant.KlantID = A.KlantID " +
                         " JOIN Persoon P on Klant.KlantID = P.KlantID " +
                         "WHERE Klant.KlantID = ? AND P.PersoonID = ?"
                 );
-                statement.setDouble(1, e.getDouble("customerId"));
-                statement.setDouble(2, e.getDouble("personId"));
 
-                ResultSet rs = executeQuery(statement);
+                statement.setDouble(1, invoice.getDouble("customerId"));
+                statement.setDouble(2, invoice.getDouble("personId"));
 
-                while (rs.next()) {
-                    Data dd = Data.fromResultSet(rs);
+                ResultSet resultSet = executeQuery(statement);
 
-                    if (dd == null) {
+                while (resultSet.next()) {
+                    Data dataObject = Data.fromResultSet(resultSet);
+
+                    if (dataObject == null) {
                         continue;
                     }
 
-                    dd.note = e.getString("note");
-                    dd.invoiceLines = e.getList("invoiceLines", Document.class);
-                    dd.InvoiceID = e.getDouble("invoiceId");
-                    dd.Date = e.getDate("date");
+                    dataObject.setNote(invoice.getString("note"));
+                    dataObject.setInvoiceLines(invoice.getList("invoiceLines", Document.class));
+                    dataObject.setInvoiceID(invoice.getDouble("invoiceId"));
+                    dataObject.setDate(invoice.getDate("date"));
 
-
-
-                    data.add(dd);
+                    data.add(dataObject);
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();
@@ -63,18 +56,18 @@ public class KlantMysqlImpl {
         return data;
     }
 
-    /**
-     * Return entries matching {@code month}
-     *
-     * @param montha int
-     * @return matching entries if any
-     */
-    public AggregateIterable<Document> getMongoData(int montha) {
+    public AggregateIterable<Document> getInvoiceData(int month) {
         MongoClient mongoClient = MongoClients.create();
 
         MongoDatabase database = mongoClient.getDatabase("bifi");
-        MongoCollection<Document> collection = database.getCollection("factuur");
-        return collection.aggregate(Arrays.asList(
+
+        MongoCollection<Document> mongoCollection = database.getCollection("factuur");
+
+        return returnInvoiceDataFromMongoCollection(mongoCollection, month);
+    }
+
+    private AggregateIterable<Document> returnInvoiceDataFromMongoCollection(MongoCollection<Document> mongoCollection, int monthNumber){
+        return mongoCollection.aggregate(Arrays.asList(
                 Aggregates.project(
                         Projections.fields(
                                 Projections.excludeId(),
@@ -87,16 +80,9 @@ public class KlantMysqlImpl {
                                 Projections.computed("month", new Document("$month", "$date")
                                 )
                         )),
-                Aggregates.match(eq("month", montha)))
-        );
+                Aggregates.match(eq("month", monthNumber))));
     }
 
-    /**Standaard code om statements te laten werken
-     *
-     * @param statement
-     * @return
-     * @throws SQLException
-     */
     public PreparedStatement prepare(final String statement) throws SQLException {
         return this.prepare(statement, Statement.NO_GENERATED_KEYS);
     }
@@ -122,22 +108,17 @@ public class KlantMysqlImpl {
         return this.result;
     }
 
-    public PreparedStatement persist() {
-        PreparedStatement stmt = this.statement;
-        this.statement = null;
-        this.result = null;
-        return stmt;
-    }
-
-    public void close(PreparedStatement p, ResultSet r) {
+    public void close(PreparedStatement preparedStatement, ResultSet resultSet) {
         try {
-            if (r != null) r.close();
-        } catch (Exception ex) {
-        }
+            if (resultSet != null){
+                resultSet.close();
+            }
 
-        try {
-            if (p != null) p.close();
+            if(preparedStatement != null){
+                preparedStatement.close();
+            }
         } catch (Exception ex) {
+            System.out.println(ex);
         }
     }
 }
