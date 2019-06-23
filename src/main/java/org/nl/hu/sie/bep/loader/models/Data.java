@@ -4,6 +4,7 @@ import org.bson.Document;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -53,8 +54,8 @@ public class Data {
         return BIC;
     }
 
-    public void setBIC(String BIC2) {
-        this.BIC = BIC2;
+    public void setBIC(String BIC) {
+        this.BIC = BIC;
     }
 
     public String getBedrijfsnaam() {
