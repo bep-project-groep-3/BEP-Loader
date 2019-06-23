@@ -5,6 +5,8 @@ import org.bson.Document;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Data {
     public String getStraat() {
@@ -322,7 +324,10 @@ public class Data {
 
             );
         } catch (SQLException ex) {
-            ex.printStackTrace();
+
+            Logger logger = LoggerFactory.getLogger(DatabaseInformationRetriever.class);
+
+            logger.info(ex.getMessage());
             return null;
         }
     }

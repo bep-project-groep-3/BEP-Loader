@@ -3,6 +3,7 @@ package org.nl.hu.sie.bep.loader.models;
 import com.mongodb.client.*;
 import com.mongodb.client.model.Aggregates;
 import com.mongodb.client.model.Projections;
+import com.mysql.jdbc.Connection;
 import org.bson.Document;
 
 import java.sql.*;
@@ -10,6 +11,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static com.mongodb.client.model.Filters.eq;
 
@@ -24,16 +28,16 @@ public class DatabaseInformationRetriever {
         List<Data> data = new ArrayList<>();
         entries.forEach((Consumer<? super Document>) (invoice) -> {
             try {
-                PreparedStatement statement = prepare("SELECT * FROM Klant " +
+                PreparedStatement statement2 = prepare("SELECT * FROM Klant " +
                         " JOIN Adres A on Klant.KlantID = A.KlantID " +
                         " JOIN Persoon P on Klant.KlantID = P.KlantID " +
                         "WHERE Klant.KlantID = ? AND P.PersoonID = ?"
                 );
 
-                statement.setDouble(1, invoice.getDouble("customerId"));
-                statement.setDouble(2, invoice.getDouble("personId"));
+                statement2.setDouble(1, invoice.getDouble("customerId"));
+                statement2.setDouble(2, invoice.getDouble("personId"));
 
-                ResultSet resultSet = executeQuery(statement);
+                ResultSet resultSet = executeQuery(statement2);
 
                 while (resultSet.next()) {
                     Data dataObject = Data.fromResultSet(resultSet);
@@ -50,7 +54,10 @@ public class DatabaseInformationRetriever {
                     data.add(dataObject);
                 }
             } catch (Exception ex) {
-                ex.printStackTrace();
+                Logger logger = LoggerFactory.getLogger(DatabaseInformationRetriever.class);
+
+                logger.info(ex.getMessage());
+
             }
         });
         return data;
@@ -92,9 +99,11 @@ public class DatabaseInformationRetriever {
 
         if (this.con == null || this.con.isClosed()) {
             try {
-                this.con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bifi", "root", "root");
+                this.con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bifi", "root", "root");
             } catch (SQLException ex) {
-                ex.printStackTrace();
+                Logger logger = LoggerFactory.getLogger(DatabaseInformationRetriever.class);
+
+                logger.info(ex.getMessage());
             }
         }
 

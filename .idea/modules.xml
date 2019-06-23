@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/BEP-Project.iml" filepath="$PROJECT_DIR$/.idea/BEP-Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/BEP-Loader.iml" filepath="$PROJECT_DIR$/.idea/BEP-Loader.iml" />
     </modules>
   </component>
 </project>
