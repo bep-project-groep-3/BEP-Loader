@@ -54,8 +54,8 @@ public class Data {
         return BIC;
     }
 
-    public void setBIC(String BIC) {
-        this.BIC = BIC;
+    public void setBIC(String bIC) {
+        this.BIC = bIC;
     }
 
     public String getBedrijfsnaam() {
