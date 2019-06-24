@@ -166,16 +166,16 @@ public class Data {
         return klantID;
     }
 
-    public void setKlantID(int klantID) {
-        klantID = klantID;
+    public void setKlantID(int klantID2) {
+        klantID = klantID2;
     }
 
     public int getPersoonID() {
         return persoonID;
     }
 
-    public void setPersoonID(int persoonID) {
-        persoonID = persoonID;
+    public void setPersoonID(int persoonID2) {
+        persoonID = persoonID2;
     }
 
     public List<Document> getInvoiceLines() {
