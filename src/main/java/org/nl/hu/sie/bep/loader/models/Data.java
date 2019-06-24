@@ -11,27 +11,27 @@ import org.slf4j.LoggerFactory;
 
 public class Data {
     public String getStraat() {
-        return Straat;
+        return straat;
     }
 
-    public void setStraat(String straat) {
-        Straat = straat;
+    public void setStraat(String straat2) {
+        straat = straat2;
     }
 
     public String getType() {
-        return Type;
+        return type;
     }
 
-    public void setType(String type) {
-        Type = type;
+    public void setType(String type2) {
+        type = type2;
     }
 
     public String getHuisnummer() {
-        return Huisnummer;
+        return huisnummer;
     }
 
-    public void setHuisnummer(String huisnummer) {
-        Huisnummer = huisnummer;
+    public void setHuisnummer(String huisnummer2) {
+        huisnummer = huisnummer2;
     }
 
     public String getPostcode() {
@@ -51,115 +51,115 @@ public class Data {
     }
 
     public String getBIC() {
-        return BIC;
+        return bic;
     }
 
-    public void setBIC(String bIC) {
-        this.BIC = bIC;
+    public void setBIC(String bIC2) {
+        this.bic = bIC2;
     }
 
     public String getBedrijfsnaam() {
-        return Bedrijfsnaam;
+        return bedrijfsnaam;
     }
 
-    public void setBedrijfsnaam(String bedrijfsnaam) {
-        Bedrijfsnaam = bedrijfsnaam;
+    public void setBedrijfsnaam(String bedrijfsnaam2) {
+        bedrijfsnaam = bedrijfsnaam2;
     }
 
     public String getRechtsvorm() {
-        return Rechtsvorm;
+        return rechtsvorm;
     }
 
-    public void setRechtsvorm(String rechtsvorm) {
-        Rechtsvorm = rechtsvorm;
+    public void setRechtsvorm(String rechtsvorm2) {
+        rechtsvorm = rechtsvorm2;
     }
 
     public String getVAT() {
-        return VAT;
+        return vat;
     }
 
-    public void setVAT(String VAT) {
-        this.VAT = VAT;
+    public void setVAT(String vAT) {
+        this.vat = vAT;
     }
 
     public String getBankRek() {
-        return BankRek;
+        return bankRek;
     }
 
-    public void setBankRek(String bankRek) {
-        BankRek = bankRek;
+    public void setBankRek(String bankRek2) {
+        bankRek = bankRek2;
     }
 
     public String getGiro() {
-        return Giro;
+        return giro;
     }
 
-    public void setGiro(String giro) {
-        Giro = giro;
+    public void setGiro(String giro2) {
+        giro = giro2;
     }
 
     public String getBik() {
-        return Bik;
+        return bik;
     }
 
-    public void setBik(String bik) {
-        Bik = bik;
+    public void setBik(String bik2) {
+        bik = bik2;
     }
 
     public String getVoornaam() {
-        return Voornaam;
+        return voornaam;
     }
 
-    public void setVoornaam(String voornaam) {
-        Voornaam = voornaam;
+    public void setVoornaam(String voornaam2) {
+        voornaam = voornaam2;
     }
 
     public String getTussenvoegsel() {
-        return Tussenvoegsel;
+        return tussenvoegsel;
     }
 
-    public void setTussenvoegsel(String tussenvoegsel) {
-        Tussenvoegsel = tussenvoegsel;
+    public void setTussenvoegsel(String tussenvoegsel2) {
+        tussenvoegsel = tussenvoegsel2;
     }
 
     public String getAchternaam() {
-        return Achternaam;
+        return achternaam;
     }
 
-    public void setAchternaam(String achternaam) {
-        Achternaam = achternaam;
+    public void setAchternaam(String achternaam2) {
+        achternaam = achternaam2;
     }
 
     public String getTelefoon() {
-        return Telefoon;
+        return telefoon;
     }
 
-    public void setTelefoon(String telefoon) {
-        Telefoon = telefoon;
+    public void setTelefoon(String telefoon2) {
+        telefoon = telefoon2;
     }
 
     public String getFax() {
-        return Fax;
+        return fax;
     }
 
-    public void setFax(String fax) {
-        Fax = fax;
+    public void setFax(String fax2) {
+        fax = fax2;
     }
 
     public String getGeslacht() {
-        return Geslacht;
+        return geslacht;
     }
 
-    public void setGeslacht(String geslacht) {
-        Geslacht = geslacht;
+    public void setGeslacht(String geslacht2) {
+        geslacht = geslacht2;
     }
 
     public String getNote() {
-        return Note;
+        return note;
     }
 
-    public void setNote(String note) {
-        Note = note;
+    public void setNote(String note2) {
+        note = note2;
     }
 
     public int getKlantID() {
@@ -202,25 +202,25 @@ public class Data {
         InvoiceID = invoiceID;
     }
 
-    private String Straat;
-    private String Type;
-    private String Huisnummer;
+    private String straat;
+    private String type;
+    private String huisnummer;
     private String postcode;
     private String plaats;
-    private String BIC;
-    private String Bedrijfsnaam;
-    private String Rechtsvorm;
-    private String VAT;
-    private String BankRek;
-    private String Giro;
-    private String Bik;
-    private String Voornaam;
-    private String Tussenvoegsel;
-    private String Achternaam;
-    private String Telefoon;
-    private String Fax;
-    private String Geslacht;
-    private String Note;
+    private String bic;
+    private String bedrijfsnaam;
+    private String rechtsvorm;
+    private String vat;
+    private String bankRek;
+    private String giro;
+    private String bik;
+    private String voornaam;
+    private String tussenvoegsel;
+    private String achternaam;
+    private String telefoon;
+    private String fax;
+    private String geslacht;
+    private String note;
 
     private int KlantID;
     private int PersoonID;
@@ -229,50 +229,50 @@ public class Data {
     private java.util.Date Date;
     private double InvoiceID;
 
-    public Data(String straat,
-                String type,
-                String huisnummer,
-                String postcode,
-                String plaats,
-                String BIC,
-                int klantID,
-                int persoonID,
-                String bedrijfsnaam,
-                String rechtsvorm,
-                String VAT,
-                String bankRek,
-                String giro,
-                String bik,
-                String voornaam,
-                String tussenvoegsel,
-                String achternaam,
-                String telefoon,
-                String fax,
-                String geslacht,
-                String note
+    public Data(String straatData,
+                String typeData,
+                String huisnummerData,
+                String postcodeData,
+                String plaatsData,
+                String BICData,
+                int klantIDData,
+                int persoonIDData,
+                String bedrijfsnaamData,
+                String rechtsvormData,
+                String VATData,
+                String bankRekData,
+                String giroData,
+                String bikData,
+                String voornaamData,
+                String tussenvoegselData,
+                String achternaamData,
+                String telefoonData,
+                String faxData,
+                String geslachtData,
+                String noteData
 
     ) {
-        Straat = straat;
-        Type = type;
-        Huisnummer = huisnummer;
-        this.postcode = postcode;
-        this.plaats = plaats;
-        this.BIC = BIC;
-        KlantID = klantID;
-        PersoonID = persoonID;
-        Bedrijfsnaam = bedrijfsnaam;
-        Rechtsvorm = rechtsvorm;
-        this.VAT = VAT;
-        BankRek = bankRek;
-        Giro = giro;
-        Bik = bik;
-        Voornaam = voornaam;
-        Tussenvoegsel = tussenvoegsel;
-        Achternaam = achternaam;
-        Telefoon = telefoon;
-        Fax = fax;
-        Geslacht = geslacht;
-        Note = note;
+        straat = straatData;
+        type = typeData;
+        huisnummer = huisnummerData;
+        this.postcode = postcodeData;
+        this.plaats = plaatsData;
+        this.bic = BICData;
+        KlantID = klantIDData;
+        PersoonID = persoonIDData;
+        bedrijfsnaam = bedrijfsnaamData;
+        rechtsvorm = rechtsvormData;
+        this.vat = VATData;
+        bankRek = bankRekData;
+        giro = giroData;
+        bik = bikData;
+        voornaam = voornaamData;
+        tussenvoegsel = tussenvoegselData;
+        achternaam = achternaamData;
+        telefoon = telefoonData;
+        fax = faxData;
+        geslacht = geslachtData;
+        note = noteData;
 
 
     }
@@ -336,27 +336,27 @@ public class Data {
     @Override
     public String toString() {
         return "Data{" +
-                "Straat='" + Straat + '\'' +
-                ", Type='" + Type + '\'' +
-                ", Huisnummer='" + Huisnummer + '\'' +
+                "Straat='" + straat + '\'' +
+                ", Type='" + type + '\'' +
+                ", Huisnummer='" + huisnummer + '\'' +
                 ", postcode='" + postcode + '\'' +
                 ", plaats='" + plaats + '\'' +
-                ", BIC='" + BIC + '\'' +
+                ", BIC='" + bic + '\'' +
                 ", KlantID=" + KlantID +
                 ", PersoonID=" + PersoonID +
-                ", Bedrijfsnaam='" + Bedrijfsnaam + '\'' +
-                ", Rechtsvorm='" + Rechtsvorm + '\'' +
-                ", VAT='" + VAT + '\'' +
-                ", BankRek='" + BankRek + '\'' +
-                ", Giro='" + Giro + '\'' +
-                ", Bik='" + Bik + '\'' +
-                ", Voornaam='" + Voornaam + '\'' +
-                ", Tussenvoegsel='" + Tussenvoegsel + '\'' +
-                ", Achternaam='" + Achternaam + '\'' +
-                ", Telefoon='" + Telefoon + '\'' +
-                ", Fax='" + Fax + '\'' +
-                ", Geslacht='" + Geslacht + '\'' +
-                ", note='" + Note + '\'' +
+                ", Bedrijfsnaam='" + bedrijfsnaam + '\'' +
+                ", Rechtsvorm='" + rechtsvorm + '\'' +
+                ", VAT='" + vat + '\'' +
+                ", BankRek='" + bankRek + '\'' +
+                ", Giro='" + giro + '\'' +
+                ", Bik='" + bik + '\'' +
+                ", Voornaam='" + voornaam + '\'' +
+                ", Tussenvoegsel='" + tussenvoegsel + '\'' +
+                ", Achternaam='" + achternaam + '\'' +
+                ", Telefoon='" + telefoon + '\'' +
+                ", Fax='" + fax + '\'' +
+                ", Geslacht='" + geslacht + '\'' +
+                ", note='" + note + '\'' +
                 ", invoiceLines='" + invoiceLines + '\'' +
                 ", invoiceID=" + InvoiceID + '\'' +
                 ", Date=" + Date + '\'' +
