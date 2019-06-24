@@ -138,7 +138,9 @@ public class DatabaseInformationRetriever {
                 preparedStatement.close();
             }
         } catch (Exception ex) {
-            System.out.println(ex);
+            Logger logger = LoggerFactory.getLogger(DatabaseInformationRetriever.class);
+
+            logger.info(ex.getMessage());
         }
     }
 }

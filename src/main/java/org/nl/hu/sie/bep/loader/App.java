@@ -15,15 +15,12 @@ public class App {
     public static void main(String[] args) {
         try {
             connect();
-        } catch (SQLException e) {
+        } finally {
 
-            Logger logger = LoggerFactory.getLogger(DatabaseInformationRetriever.class);
-
-            logger.info(e.getMessage());
         }
     }
 
-    private static void connect() throws SQLException {
+    private static void connect()  {
         DatabaseInformationRetriever data = new DatabaseInformationRetriever();
         List<Data> entries = data.getCustomerInformation(5);
 
