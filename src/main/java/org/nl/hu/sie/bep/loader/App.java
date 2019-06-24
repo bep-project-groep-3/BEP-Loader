@@ -27,10 +27,6 @@ public class App {
         DatabaseInformationRetriever data = new DatabaseInformationRetriever();
         List<Data> entries = data.getCustomerInformation(5);
 
-        Logger logger = LoggerFactory.getLogger(DatabaseInformationRetriever.class);
-
-        logger.info(entries.toString());
-
         entries.forEach(System.out::println);
     }
 }

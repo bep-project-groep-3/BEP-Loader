@@ -163,19 +163,19 @@ public class Data {
     }
 
     public int getKlantID() {
-        return KlantID;
+        return klantID;
     }
 
     public void setKlantID(int klantID) {
-        KlantID = klantID;
+        klantID = klantID;
     }
 
     public int getPersoonID() {
-        return PersoonID;
+        return persoonID;
     }
 
     public void setPersoonID(int persoonID) {
-        PersoonID = persoonID;
+        persoonID = persoonID;
     }
 
     public List<Document> getInvoiceLines() {
@@ -187,19 +187,19 @@ public class Data {
     }
 
     public java.util.Date getDate() {
-        return Date;
+        return date;
     }
 
-    public void setDate(java.util.Date date) {
-        Date = date;
+    public void setDate(java.util.Date date2) {
+        date = date2;
     }
 
     public double getInvoiceID() {
-        return InvoiceID;
+        return invoiceID;
     }
 
-    public void setInvoiceID(double invoiceID) {
-        InvoiceID = invoiceID;
+    public void setInvoiceID(double invoiceID2) {
+        invoiceID = invoiceID2;
     }
 
     private String straat;
@@ -222,24 +222,24 @@ public class Data {
     private String geslacht;
     private String note;
 
-    private int KlantID;
-    private int PersoonID;
+    private int klantID;
+    private int persoonID;
 
     private List<Document> invoiceLines;
-    private java.util.Date Date;
-    private double InvoiceID;
+    private java.util.Date date;
+    private double invoiceID;
 
     public Data(String straatData,
                 String typeData,
                 String huisnummerData,
                 String postcodeData,
                 String plaatsData,
-                String BICData,
+                String bicData,
                 int klantIDData,
                 int persoonIDData,
                 String bedrijfsnaamData,
                 String rechtsvormData,
-                String VATData,
+                String vatData,
                 String bankRekData,
                 String giroData,
                 String bikData,
@@ -257,12 +257,12 @@ public class Data {
         huisnummer = huisnummerData;
         this.postcode = postcodeData;
         this.plaats = plaatsData;
-        this.bic = BICData;
-        KlantID = klantIDData;
-        PersoonID = persoonIDData;
+        this.bic = bicData;
+        klantID = klantIDData;
+        persoonID = persoonIDData;
         bedrijfsnaam = bedrijfsnaamData;
         rechtsvorm = rechtsvormData;
-        this.vat = VATData;
+        this.vat = vatData;
         bankRek = bankRekData;
         giro = giroData;
         bik = bikData;
@@ -342,8 +342,8 @@ public class Data {
                 ", postcode='" + postcode + '\'' +
                 ", plaats='" + plaats + '\'' +
                 ", BIC='" + bic + '\'' +
-                ", KlantID=" + KlantID +
-                ", PersoonID=" + PersoonID +
+                ", KlantID=" + klantID +
+                ", PersoonID=" + persoonID +
                 ", Bedrijfsnaam='" + bedrijfsnaam + '\'' +
                 ", Rechtsvorm='" + rechtsvorm + '\'' +
                 ", VAT='" + vat + '\'' +
@@ -358,8 +358,8 @@ public class Data {
                 ", Geslacht='" + geslacht + '\'' +
                 ", note='" + note + '\'' +
                 ", invoiceLines='" + invoiceLines + '\'' +
-                ", invoiceID=" + InvoiceID + '\'' +
-                ", Date=" + Date + '\'' +
+                ", invoiceID=" + invoiceID + '\'' +
+                ", Date=" + date + '\'' +
                 '}';
     }
 }
