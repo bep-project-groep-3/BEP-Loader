@@ -1,6 +1,8 @@
 package org.nl.hu.sie.bep.loader.models;
 
+import com.mongodb.*;
 import com.mongodb.client.*;
+import com.mongodb.client.MongoClient;
 import com.mongodb.client.model.Aggregates;
 import com.mongodb.client.model.Projections;
 import com.mysql.jdbc.Connection;
@@ -64,13 +66,23 @@ public class DatabaseInformationRetriever {
     }
 
     public AggregateIterable<Document> getInvoiceData(int month) {
-        MongoClient mongoClient = MongoClients.create();
+        try(MongoClient mongoClient = MongoClients.create()){
 
-        MongoDatabase database = mongoClient.getDatabase("bifi");
+            MongoDatabase database = mongoClient.getDatabase("bifi");
 
-        MongoCollection<Document> mongoCollection = database.getCollection("factuur");
+            MongoCollection<Document> mongoCollection = database.getCollection("factuur");
 
-        return returnInvoiceDataFromMongoCollection(mongoCollection, month);
+            return returnInvoiceDataFromMongoCollection(mongoCollection, month);
+
+
+        }
+
+        finally {
+
+
+        }
+
+
     }
 
     private AggregateIterable<Document> returnInvoiceDataFromMongoCollection(MongoCollection<Document> mongoCollection, int monthNumber){
