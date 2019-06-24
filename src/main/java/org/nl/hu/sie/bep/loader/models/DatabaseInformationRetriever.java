@@ -23,6 +23,7 @@ public class DatabaseInformationRetriever {
     private Connection con = null;
     private PreparedStatement statement;
     private ResultSet result;
+    private String pw = "root";
 
     public List<Data> getCustomerInformation(int month) throws SQLException {
         AggregateIterable<Document> entries = this.getInvoiceData(month);
@@ -66,7 +67,7 @@ public class DatabaseInformationRetriever {
     }
 
     public AggregateIterable<Document> getInvoiceData(int month) {
-        try(MongoClient mongoClient = MongoClients.create()){
+        MongoClient mongoClient = MongoClients.create();{
 
             MongoDatabase database = mongoClient.getDatabase("bifi");
 
@@ -77,10 +78,9 @@ public class DatabaseInformationRetriever {
 
         }
 
-        finally {
 
 
-        }
+
 
 
     }
@@ -111,7 +111,7 @@ public class DatabaseInformationRetriever {
 
         if (this.con == null || this.con.isClosed()) {
             try {
-                this.con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bifi", "root", "root");
+                this.con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bifi", "root", pw);
             } catch (SQLException ex) {
                 Logger logger = LoggerFactory.getLogger(DatabaseInformationRetriever.class);
 
