@@ -69,16 +69,13 @@ public class DatabaseInformationRetriever {
     public AggregateIterable<Document> getInvoiceData(int month) {
         MongoClient mongoClient = MongoClients.create();
 
-            MongoDatabase database = mongoClient.getDatabase("bifi");
+        MongoDatabase database = mongoClient.getDatabase("bifi");
 
-            MongoCollection<Document> mongoCollection = database.getCollection("factuur");
+        MongoCollection<Document> mongoCollection = database.getCollection("factuur");
 
-            return returnInvoiceDataFromMongoCollection(mongoCollection, month);
+        mongoClient.close();
 
-
-
-
-
+        return returnInvoiceDataFromMongoCollection(mongoCollection, month);
 
 
 
