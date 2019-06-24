@@ -9,6 +9,11 @@ import static org.junit.Assert.assertTrue;
  */
 public class AppTest 
 {
+    @Test
+    public void main() throws Exception {
+
+    }
+
     /**
      * Rigorous Test :-)
      */
@@ -17,4 +22,6 @@ public class AppTest
     {
         assertTrue( true );
     }
+
+
 }
