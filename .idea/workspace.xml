@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="59cd11b9-13b2-4a35-87c6-718d70dcea7e" name="Default Changelist" comment="Default Changelist">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/nl/hu/sie/bep/loader/App.java" afterPath="$PROJECT_DIR$/src/main/java/org/nl/hu/sie/bep/loader/App.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/nl/hu/sie/bep/loader/models/DatabaseInformationRetriever.java" afterPath="$PROJECT_DIR$/src/main/java/org/nl/hu/sie/bep/loader/models/DatabaseInformationRetriever.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -56,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatabaseInformationRetriever.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DatabaseInformationRetriever.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/nl/hu/sie/bep/loader/models/DatabaseInformationRetriever.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="144" column="5" lean-forward="true" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="5" />
+            <state relative-caret-position="259">
+              <caret line="122" column="89" lean-forward="false" selection-start-line="122" selection-start-column="89" selection-end-line="122" selection-end-column="89" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -88,7 +88,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/nl/hu/sie/bep/loader/App.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
@@ -250,8 +250,8 @@
         <option value="$PROJECT_DIR$/src/main/java/org/nl/hu/sie/bep/loader/adapter/DatabaseAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nl/hu/sie/bep/loader/models/Data.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nl/hu/sie/bep/loader/models/DatabaseInformationRetriever.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nl/hu/sie/bep/loader/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nl/hu/sie/bep/loader/models/DatabaseInformationRetriever.java" />
       </list>
     </option>
   </component>
@@ -924,7 +924,7 @@
       <option name="presentableId" value="Default" />
       <updated>1557751626839</updated>
       <workItem from="1557751631138" duration="723000" />
-      <workItem from="1561322001844" duration="12610000" />
+      <workItem from="1561322001844" duration="13454000" />
     </task>
     <task id="LOCAL-00001" summary="Default Changelist">
       <created>1561326060232</created>
@@ -1031,11 +1031,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561410761857</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Default Changelist">
+      <created>1561410962679</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1561410962679</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31759000" />
+    <option name="totallyTimeSpent" value="32603000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1278,21 +1285,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nl/hu/sie/bep/loader/models/DatabaseInformationRetriever.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="144" column="5" lean-forward="true" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/nl/hu/sie/bep/loader/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nl/hu/sie/bep/loader/models/DatabaseInformationRetriever.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="122" column="89" lean-forward="false" selection-start-line="122" selection-start-column="89" selection-end-line="122" selection-end-column="89" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
