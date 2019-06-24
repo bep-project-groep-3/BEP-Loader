@@ -25,11 +25,11 @@ public class DatabaseInformationRetriever {
     private ResultSet result;
     private String pws = "root";
 
-    public List<Data> getCustomerInformation(int month) throws SQLException {
+    public List<Data> getCustomerInformation(int month)  {
         AggregateIterable<Document> entries = this.getInvoiceData(month);
 
         List<Data> data = new ArrayList<>();
-        entries.forEach((Consumer<? super Document>) (invoice) -> {
+        entries.forEach((Consumer<? super Document>) invoice -> {
             try {
                 PreparedStatement statement2 = prepare("SELECT * FROM Klant " +
                         " JOIN Adres A on Klant.KlantID = A.KlantID " +
@@ -67,7 +67,7 @@ public class DatabaseInformationRetriever {
     }
 
     public AggregateIterable<Document> getInvoiceData(int month) {
-        MongoClient mongoClient = MongoClients.create();{
+        MongoClient mongoClient = MongoClients.create();
 
             MongoDatabase database = mongoClient.getDatabase("bifi");
 
@@ -76,7 +76,6 @@ public class DatabaseInformationRetriever {
             return returnInvoiceDataFromMongoCollection(mongoCollection, month);
 
 
-        }
 
 
 
