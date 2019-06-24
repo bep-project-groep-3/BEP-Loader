@@ -4,7 +4,6 @@ import org.bson.Document;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -284,12 +283,12 @@ public class Data {
             String huisnummer = resultSet.getString("huisnummer");
             String postcode = resultSet.getString("postcode");
             String plaats = resultSet.getString("plaats");
-            String BIC = resultSet.getString("BIC");
+            String biC = resultSet.getString("BIC");
             int klantID = resultSet.getInt("klantID");
             int persoonID = resultSet.getInt("persoonID");
             String bedrijfsnaam = resultSet.getString("bedrijfsnaam");
             String rechtsvorm = resultSet.getString("rechtsvorm");
-            String VAT = resultSet.getString("VAT");
+            String vaT = resultSet.getString("VAT");
             String bankRek = resultSet.getString("bankRek");
             String giro = resultSet.getString("giro");
             String bik = resultSet.getString("bik");
@@ -306,12 +305,12 @@ public class Data {
                     huisnummer,
                     postcode,
                     plaats,
-                    BIC,
+                    biC,
                     klantID,
                     persoonID,
                     bedrijfsnaam,
                     rechtsvorm,
-                    VAT,
+                    vaT,
                     bankRek,
                     giro,
                     bik,
