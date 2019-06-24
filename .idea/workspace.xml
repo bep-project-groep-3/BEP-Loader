@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59cd11b9-13b2-4a35-87c6-718d70dcea7e" name="Default Changelist" comment="Default Changelist">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/org/nl/hu/sie/bep/loader/models/DataTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/org/nl/hu/sie/bep/loader/models/DatabaseInformationRetrieverTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/BEP-Loader.iml" afterPath="$PROJECT_DIR$/.idea/BEP-Loader.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/nl/hu/sie/bep/loader/models/DatabaseInformationRetriever.java" afterPath="$PROJECT_DIR$/src/main/java/org/nl/hu/sie/bep/loader/models/DatabaseInformationRetriever.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/nl/hu/sie/bep/loader/AppTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/nl/hu/sie/bep/loader/AppTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -991,7 +986,7 @@
       <updated>1557751626839</updated>
       <workItem from="1557751631138" duration="723000" />
       <workItem from="1561322001844" duration="17174000" />
-      <workItem from="1561415619154" duration="2754000" />
+      <workItem from="1561415619154" duration="2778000" />
     </task>
     <task id="LOCAL-00001" summary="Default Changelist">
       <created>1561326060232</created>
@@ -1119,7 +1114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561412073484</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Default Changelist">
+      <created>1561418386919</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1561418386919</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1134,7 +1136,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39077000" />
+    <option name="totallyTimeSpent" value="39101000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
