@@ -28,7 +28,6 @@ public class DatabaseInformationRetriever {
     private Connection con = null;
     private PreparedStatement statement;
     private ResultSet result;
-    private String pws = "root";
     Properties props = new Properties();
 
 
@@ -115,26 +114,28 @@ public class DatabaseInformationRetriever {
 
 
         if (this.con == null || this.con.isClosed()) {
+            InputStream input = null;
             try {
-                InputStream input = null;
-                try {
-                    input = new FileInputStream("C:\\Users\\Dima\\IdeaProjects\\BEP-Loader\\login.properties");
-                } catch (FileNotFoundException e) {
-                    Logger logger = LoggerFactory.getLogger(DatabaseInformationRetriever.class);
-                    logger.info("File not found", e);
+                input = new FileInputStream("C:\\Users\\Dima\\IdeaProjects\\BEP-Loader\\login.properties");
+            } catch (FileNotFoundException e) {
+                Logger logger = LoggerFactory.getLogger(DatabaseInformationRetriever.class);
+                logger.info("File not found", e);
 
 
-                }
-                try {
-                    props.load(input);
-                } catch (IOException e) {
-                    Logger logger = LoggerFactory.getLogger(DatabaseInformationRetriever.class);
-                    logger.info("IO Exception", e);
+            }
+            try {
+                props.load(input);
+            } catch (IOException e) {
+                Logger logger = LoggerFactory.getLogger(DatabaseInformationRetriever.class);
+                logger.info("IO Exception", e);
 
-                }
+            }
+            try {
+
                 String password2 = props.getProperty("password");
-                System.out.println(password2);
-                this.con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bifi", "root", password2 );
+
+                this.con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bifi", "root", password2
+                );
             } catch (SQLException ex) {
                 Logger logger = LoggerFactory.getLogger(DatabaseInformationRetriever.class);
 
