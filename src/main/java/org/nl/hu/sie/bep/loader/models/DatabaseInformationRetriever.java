@@ -31,6 +31,8 @@ public class DatabaseInformationRetriever {
     private String pws = "root";
     Properties props = new Properties();
 
+
+
     public List<Data> getCustomerInformation(int month)  {
         AggregateIterable<Document> entries = this.getInvoiceData(month);
 
@@ -111,28 +113,28 @@ public class DatabaseInformationRetriever {
 
         this.close(this.statement, this.result);
 
-        InputStream input = null;
-        try {
-            input = new FileInputStream("C:\\Users\\Dima\\IdeaProjects\\BEP-Loader\\login.properties");
-        } catch (FileNotFoundException e) {
-            Logger logger = LoggerFactory.getLogger(DatabaseInformationRetriever.class);
-            logger.info("File not found", e);
-
-
-        }
-        try {
-            props.load(input);
-        } catch (IOException e) {
-            Logger logger = LoggerFactory.getLogger(DatabaseInformationRetriever.class);
-            logger.info("IO Exception", e);
-
-
-        }
-        final String password = props.getProperty("password");
 
         if (this.con == null || this.con.isClosed()) {
             try {
-                this.con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bifi", "root", pws);
+                InputStream input = null;
+                try {
+                    input = new FileInputStream("C:\\Users\\Dima\\IdeaProjects\\BEP-Loader\\login.properties");
+                } catch (FileNotFoundException e) {
+                    Logger logger = LoggerFactory.getLogger(DatabaseInformationRetriever.class);
+                    logger.info("File not found", e);
+
+
+                }
+                try {
+                    props.load(input);
+                } catch (IOException e) {
+                    Logger logger = LoggerFactory.getLogger(DatabaseInformationRetriever.class);
+                    logger.info("IO Exception", e);
+
+                }
+                String password2 = props.getProperty("password");
+                System.out.println(password2);
+                this.con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bifi", "root", password2 );
             } catch (SQLException ex) {
                 Logger logger = LoggerFactory.getLogger(DatabaseInformationRetriever.class);
 
